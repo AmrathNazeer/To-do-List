@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TO DO LIST</title>
+        <link rel="stylesheet" href="task.css">
+    </head>
+    <body>
+        <h2><img  width ="45px" height="40px"  src="./todo.png">TO-DO-LIST</h2>
+   
+        <div class ="form">
+            <input id="title" placeholder="Task name">
+            <select id="priority">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="filter">
+            <button onclick="filterTasks('All')">All</button>
+            <button onclick="filterTasks('Pending')">Pending</button>
+            <button onclick="filterTasks('Completed')">Completed</button>
+        </div>
+       <table border="4">
+        <thead>
+            <tr>
+                <th>TASK NAME</th>
+                <th>PRIORITY</th>
+                <th>STATUS</th>    
+                <th>ACTIONS</th>      
+            </tr>
+        </thead>
+        <tbody id="create"></tbody>
+       </table>
+       <script src="task.js"></script>
+    </body>
+</html>
