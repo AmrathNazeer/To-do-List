@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>TO DO LIST</title>
+        <link rel="icon" href="tabicon.png" type="image/png" sizes="32x32">
+
         <link rel="stylesheet" href="task.css">
     </head>
     <body>
@@ -22,7 +24,12 @@
             <button onclick="filterTasks('Pending')">Pending</button>
             <button onclick="filterTasks('Completed')">Completed</button>
         </div>
-       <table border="4">
+        <div id="loader" class="loader">
+     <div class="spinner"></div>
+     <p>Loading your tasks…</p>
+     </div>
+
+       <table>
         <thead>
             <tr>
                 <th>TASK NAME</th>

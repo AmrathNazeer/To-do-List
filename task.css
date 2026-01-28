@@ -1,6 +1,7 @@
 body{
    padding: 20px;
     background-color:#9ECFD4;
+    font-family: "seoge UI",sans-serif;
 }
 h2{
     font-size: 40px;
@@ -11,7 +12,8 @@ h2{
    }
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse:separate ;
+  border-spacing: 0 12px;
   border-color:#16476A;
   
 }
@@ -28,11 +30,11 @@ table {
     height: 25px;
     margin: 20px;
 }
-th, td {
+/* th, td {
   border: 1px solid #16476A;
   padding: 8px;
   text-align: center;
-}
+} */
 
 .completed {
   text-decoration: line-through;
@@ -45,7 +47,30 @@ button {
   border-radius:7px;
   border: 4px solid #16476A;
   color:#000508;
+  background-color: #cfe9ee;
 }
+
+.loader {
+    display: none;
+    text-align: center;
+    margin: 30px 0;
+    color: #0b4c5f;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #bde0e6;
+    border-top: 4px solid #0b4c5f;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
 @media(max-width:768px) {
     table{
         width:50%
@@ -53,3 +78,34 @@ button {
     }
     
 }
+
+/* Header */
+thead th {
+    background: #0b4c5f;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: none;
+}
+
+/* Each row looks like a card */
+tbody tr {
+    background: #cfe9ee;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    border-radius: 8px;
+}
+
+/* Cells */
+td {
+    padding: 14px;
+    border: none;
+}
+
+/* Rounded corners */
+tbody tr td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+tbody tr td:last-child {
+    border-radius: 0 8px 8px 0;
+}
+

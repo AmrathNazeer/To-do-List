@@ -7,10 +7,13 @@ async function load(){
     try{
 
         create.innerHTML=" ";
+        document.getElementById("loader").style.display = "block";
         let response = await fetch(API);
         let data = await response.json();
         allTasks = data;
+      
         display(data);
+        document.getElementById("loader").style.display = "none";
 }catch(error){
         create.innerText = "Error fetching data";
     }
@@ -100,7 +103,7 @@ function showEditUI(task, row) {
     let priorityCell = row.children[1];
     let actionCell = row.children[3];
 
-    // Create dropdown
+// Create dropdown
     let select = document.createElement("select");
     ["Low", "Medium", "High"].forEach(p => {
         let option = document.createElement("option");
@@ -110,7 +113,7 @@ function showEditUI(task, row) {
         select.appendChild(option);
     });
 
-    // Save button
+// Save button
     let saveBtn = document.createElement("button");
     saveBtn.innerText = "SAVE";
     saveBtn.onclick = async () => {
@@ -122,12 +125,12 @@ function showEditUI(task, row) {
         load();
     };
 
-    // Cancel button
+// Cancel button
     let cancelBtn = document.createElement("button");
     cancelBtn.innerText = "CANCEL";
     cancelBtn.onclick = () => load();
 
-    // Replace UI
+// Replace UI
     priorityCell.innerHTML = "";
     priorityCell.appendChild(select);
 
@@ -151,3 +154,4 @@ function filterTasks(type) {
     }
 }
 document.addEventListener("DOMContentLoaded",load);
+
